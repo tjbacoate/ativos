@@ -7,7 +7,7 @@ window.RELATORIOS_ATIVOS = {
   "2026-08": {
     competencia: "Agosto de 2026",
     atualizadoEm: "11/09/2026",
-    atualizadoPor: "Kamylle Assad",
+    atualizadoPor: "Rose Neves",
     estoque: {
       total: 6488,
       itens: [
