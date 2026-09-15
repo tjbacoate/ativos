@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Relatório mensal consolidado do Setor de Ativos - TJBA e Solutis.">
+  <title>Relatório Consolidado do Setor de Ativos</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23087dbd'/%3E%3Cpath d='M17 18h30v9H29v5h12a10 10 0 0 1 0 20H17v-9h23c2 0 3-1 3-3s-1-3-3-3H28a11 11 0 0 1-11-11z' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <div class="brand-copy">
+        <p>Poder Judiciário</p>
+        <p>Tribunal de Justiça do Estado da Bahia</p>
+        <p>SETIM <span>•</span> DIN <span>•</span> COATE</p>
+        <p>Solutis Tecnologias Ltda.</p>
+      </div>
+      <img class="brand-logo" src="imagens/solutis_logo.png" alt="Solutis">
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Gestão mensal de ativos</p>
+        <h1>Relatório Consolidado do Setor de Ativos</h1>
+        <p id="report-meta" class="hero__meta"></p>
+      </div>
+      <div class="toolbar" aria-label="Controles do relatório">
+        <label for="competencia">Competência</label>
+        <select id="competencia"></select>
+        <button id="print-report" class="button" type="button">Imprimir / PDF</button>
+      </div>
+    </section>
+
+    <section id="kpis" class="kpi-grid" aria-label="Indicadores principais"></section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <p class="section-heading__index">01</p>
+          <h2>Panorama geral do estoque</h2>
+          <p>Posição consolidada dos equipamentos e recursos sob controle.</p>
+        </div>
+        <strong id="stock-total" class="section-total"></strong>
+      </div>
+      <div class="stock-layout">
+        <div>
+          <div id="stock-bars" class="bar-list"></div>
+          <div id="stock-minor" class="minor-grid"></div>
+        </div>
+        <aside class="insight-card">
+          <span class="insight-card__label">Leitura executiva</span>
+          <p id="stock-insight"></p>
+          <div id="stock-detail" class="detail-groups"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <p class="section-heading__index">02</p>
+          <h2>Garantia de fornecedores</h2>
+          <p>Volume, situação dos chamados e problemas de maior incidência.</p>
+        </div>
+        <strong id="warranty-total" class="section-total"></strong>
+      </div>
+      <div class="warranty-layout">
+        <div id="status-donut" class="donut" role="img" aria-label="Distribuição dos chamados por status">
+          <div class="donut__center"><strong id="donut-total"></strong><span>chamados</span></div>
+        </div>
+        <div id="status-list" class="status-list"></div>
+        <div>
+          <h3>Principais falhas consolidadas</h3>
+          <div id="failures" class="failure-list"></div>
+        </div>
+      </div>
+      <div id="supplier-strip" class="supplier-strip"></div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <p class="section-heading__index">03</p>
+          <h2>Atendimento por comarca</h2>
+          <p>Distribuição territorial dos chamados de ativos atendidos.</p>
+        </div>
+        <strong id="service-total" class="section-total"></strong>
+      </div>
+      <div class="service-summary">
+        <div id="top-cities" class="top-cities"></div>
+        <div class="search-box">
+          <label for="city-search">Localizar comarca</label>
+          <input id="city-search" type="search" placeholder="Digite o nome da comarca..." autocomplete="off">
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Comarca</th><th>Chamados</th><th>Participação</th><th>Comparativo</th></tr></thead>
+          <tbody id="cities-table"></tbody>
+        </table>
+      </div>
+      <p id="city-count" class="table-note"></p>
+    </section>
+
+    <footer>
+      <p>Tribunal de Justiça do Estado da Bahia — SETIM / DIN / COATE <span>•</span> Solutis Tecnologias Ltda.</p>
+      <p id="update-note"></p>
+    </footer>
+  </main>
+
+  <script src="dados/relatorios.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
